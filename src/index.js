@@ -1,13 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import { ConnectedRouter} from 'connected-react-router'
+import {Provider} from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
+import configureStore, {history} from './store/store'
+import reportWebVitals from './reportWebVitals'
+
+// view
+import App from './App'
+import './index.css'
+
+// store
+const store = configureStore()
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ConnectedRouter>
+  </Provider>,
   document.getElementById('root')
 );
 
