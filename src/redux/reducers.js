@@ -8,7 +8,7 @@ const authReducer = (state = initialState.auth,action) =>{
       return {
         ...state,
         user:action.payload,
-        isSignedIn:true
+        isSignedIn:localStorage.getItem('profile')
       }
     case Action.LOGOUT :
       localStorage.clear();

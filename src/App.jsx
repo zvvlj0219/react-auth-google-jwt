@@ -20,7 +20,7 @@ const App = () => {
   const username = () =>{
     let name = ''
     if(user?.result.googleId){
-      name =  `${user.result.givenName} ${user.result.familyName}`
+      name =  user.result.name
     }
     if(user?.result._id){
       name =  user.result.username
@@ -51,7 +51,7 @@ const App = () => {
         :
         ''
       }
-      <Router />
+      <Router isSignedIn={isSignedIn} />
     </div>
   )
 }

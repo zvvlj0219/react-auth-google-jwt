@@ -19,7 +19,7 @@ const Google = () => {
 
     const data = {
       result,
-      token
+      token,
     }
 
     try {
